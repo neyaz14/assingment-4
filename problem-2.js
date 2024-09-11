@@ -1,16 +1,19 @@
 function sendNotification(email) {
-    console.log(email.length);
-    for(let i =0; i<email.length; i++){
-        // console.log(email[i]);
-       
+    let ifValaid = email.indexOf("@");
+    if(ifValaid < 0){
+        return "Invalid Email";
     }
+    let newArray = email.split("@");
+    let userName= newArray[0];
+    let domainName = newArray[1];
+    let notification = userName +" sent you an email from "+ domainName;
+
+    return notification;
+
+    
 }
 
-console.log(sendNotification("neyaz@gmail.com"));
 
 
 
 
-// if(email[i] !== '@'){
-//     console.log("Invalid Email");
-// }
